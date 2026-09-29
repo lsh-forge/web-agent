@@ -17,6 +17,10 @@
 
 Each worker runs a ReAct agent powered by AgentScope. Browser actions are performed through Playwright MCP; visual assistance is invoked only when needed. Context management controls the growth of tool output and interaction history, while the runtime layer coordinates concurrent workers and recovery.
 
+## Technical Report
+
+For the complete technical design, see the [Technical Report](技术报告.pdf).
+
 ## Quick Start
 
 ### 1. Install dependencies
