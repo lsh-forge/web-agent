@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# 评测输出（不要提交）
+app.log
+test_results/
+logs/
+outputs/
+eval_results/
+.playwright-mcp/
+temp/
+tmp/
+eval_results_summary.csv

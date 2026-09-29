@@ -1,0 +1,12 @@
+{
+    "api_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "api_key": "YOUR_API_KEY",
+    "api_model": "qwen3.7-plus",
+    "text_api_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "text_api_key": "YOUR_API_KEY",
+    "text_api_model": "qwen3.7-plus",
+    "temperature": 0.2,
+    "top_p": 1.0,
+    "max_tokens": 8192,
+    "context_size": 280000
+}

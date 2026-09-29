@@ -1,0 +1,35 @@
+# ============================================================
+# WebRetriever Challenge —— 统一环境声明文件（conda + pip 一份搞定）
+# 评测系统会用它自动创建你的专属环境：conda env create -f environment.yml
+#
+# 三类依赖各放各处，别放错层级：
+#   1) Python 版本        → 改 dependencies 下的 python=3.x（只写大版本，如 3.10 / 3.11）
+#   2) 系统 / 其它语言工具  → 加到 dependencies:（走 conda-forge，如 nodejs、ffmpeg、编译器、系统库；装进本队环境、无需 root）
+#   3) Python 包          → 加到 pip: 下（支持 PyPI 名 / git+https / URL / 本地 wheel）
+# ============================================================
+
+name: web-agent              # Conda environment name
+
+channels:                    # conda 包的下载源，顺序即优先级（评测机已配好清华镜像加速）
+  - conda-forge              # 社区源，nodejs / ffmpeg 等系统工具都在这
+  - defaults                 # 官方源
+
+dependencies:                # ↓↓↓ 这一层是 conda 装的（Python 本体 + 系统级工具）
+  - python=3.11              # Python 3.11+
+
+  # ── 需要 Node.js 就取消下面这行注释（不写版本=装最新；要锁版本写成 nodejs=20）──
+  - nodejs=26.6.0            # Playwright MCP 通过 npx 启动
+
+
+  - pip                      # 显式声明 pip（避免 conda 告警，确保下面 pip 包能装）
+  - pip:                     # ↓↓↓ 这一层是 pip 装的（纯 Python 包），按需增删（不写版本=装最新；要锁版本写成 numpy==1.26.4）
+      - playwright==1.62.0
+      - agentscope==2.0.6
+      - mcp==1.29.0
+      - openai==3.0.0
+      - numpy==2.4.6
+      - Pillow==12.3.0
+      - requests==2.34.2
+      - tiktoken==0.13.0
+      - tldextract==5.3.2
+      - graphql-core==3.2.11
